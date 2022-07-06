@@ -1,0 +1,25 @@
+body{
+  background: #0E0F10;
+  padding: 14px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #D6E1EF;
+  font-family: "Roboto", sans-serif;
+}
+
+.container{
+
+
+}
+
+.app{
+  display: grid;
+  padding: 12px 20px;
+  border-radius: 15px;
+  background: #202327;
+  grid-template-columns: 1fr 5fr;
+}
