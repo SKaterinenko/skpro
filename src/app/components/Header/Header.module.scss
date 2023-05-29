@@ -1,0 +1,17 @@
+.header {
+  @apply flex justify-between w-full;
+
+  .logo {
+    @apply text-4xl cursor-pointer font-sans font-bold;
+  }
+
+  .links {
+    ul {
+      @apply flex justify-between;
+
+      li {
+        @apply px-4 text-2xl cursor-pointer font-bold;
+      }
+    }
+  }
+}

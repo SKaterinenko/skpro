@@ -1,0 +1,14 @@
+.layout {
+  @apply mt-8 px-11;
+  .content {
+    @apply flex;
+
+    .sidebar {
+      @apply flex flex-col;
+
+      svg{
+        @apply text-5xl
+      }
+    }
+  }
+}
