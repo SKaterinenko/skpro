@@ -1,13 +1,13 @@
 .layout {
-  @apply mt-8 px-11;
+  @apply mt-8 px-11 #{!important};
   .content {
-    @apply flex;
+    @apply flex gap-20;
 
     .sidebar {
-      @apply flex flex-col;
+      @apply flex flex-col justify-center;
 
-      svg{
-        @apply text-5xl
+      svg {
+        @apply text-4xl mb-8 cursor-pointer;
       }
     }
   }

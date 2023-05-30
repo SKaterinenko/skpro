@@ -1,11 +1,32 @@
-import styles from "./page.module.scss"
+"use client"
+import ReactFullpage from '@fullpage/react-fullpage';
+import Main from "@/app/pages/Main/Main";
+
 const Home = () => {
+    // const scrollRef = useRef(null);
+    // useScrollSnap({ ref: scrollRef, duration: 50, delay: 20 });
+
+
     return (
-        <main className={styles.home}>
-            <div>
-                <h2>tewxetx</h2>
-            </div>
-        </main>
+        // @ts-ignore
+        <ReactFullpage
+            //fullpage options
+            licenseKey={'YOUR_KEY_HERE'}
+            scrollingSpeed={1000} /* Options here */
+
+            render={({state, fullpageApi}) => {
+                return (
+                    <ReactFullpage.Wrapper>
+                        <div className="section">
+                            <Main/>
+                        </div>
+                        <div className="section">
+                            <p>Section 2</p>
+                        </div>
+                    </ReactFullpage.Wrapper>
+                );
+            }}
+        />
     )
 }
 
