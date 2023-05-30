@@ -11,6 +11,28 @@ const Home = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     };
 
+    const setDark = () => {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem("theme", "dark")
+        setTheme("dark")
+    }
+
+    const setLight = () => {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem("theme", "light")
+        setTheme("light")
+    }
+
+    // Если клиент впервые на сайте то поставится тема которая используется в системе
+    const checkTheme = () => {
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
+            setDark()
+        } else {
+            setLight()
+        }
+    }
+
+    // Позволяет кнопки менять тему
     useEffect(() => {
         switch (theme) {
             case "dark" :
@@ -23,21 +45,18 @@ const Home = () => {
                 break
             default:
                 localStorage.removeItem("theme")
+                checkTheme()
                 break;
         }
 
     }, [theme])
 
-
+    // Если системная тема поменялась то и сайт тоже поменяет тему
     darkQuery.addEventListener("change", e => {
         if (e.matches) {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem("theme", "dark")
-            setTheme("dark")
+            setDark()
         } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem("theme", "light")
-            setTheme("light")
+            setLight()
         }
     })
 
@@ -45,7 +64,7 @@ const Home = () => {
         // @ts-ignore
         <ReactFullpage
             navigation
-            scrollingSpeed={1000} /* Options here */
+            scrollingSpeed={2000} /* Options here */
             render={({state, fullpageApi}) => {
                 return (
                     <ReactFullpage.Wrapper>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,5 +15,16 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+      plugin(({addComponents, theme, addUtilities})=>{
+        addUtilities({
+          '.bg-gradient-white': {
+            background: "linear-gradient(to bottom, transparent, rgb(255, 255, 255)), rgb(214, 219, 220)"
+          },
+          '.bg-static-black': {
+            background: "linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0)"
+          }
+        })
+      })
+  ],
 }
