@@ -1,7 +1,7 @@
 import './globals.css'
 import Header from "@/app/components/Header/Header";
 import styles from './layout.module.scss'
-import {FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
+import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 
 export const metadata = {
     title: 'SKpro - Портфолио',
@@ -21,6 +21,7 @@ const Layout = ({
             <div className={styles.sidebar}>
                 <FaTelegramPlane/>
                 <FaRegEnvelope/>
+                <FaGithub/>
             </div>
             {children}
         </div>

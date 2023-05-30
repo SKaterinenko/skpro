@@ -1,0 +1,22 @@
+.main {
+  @apply flex gap-20 w-full;
+
+  .greetings {
+    .sergey {
+      @apply text-8xl font-bold;
+    }
+
+    .hello {
+      @apply text-4xl font-light;
+    }
+
+    .frontend {
+      @apply text-9xl font-semibold;
+    }
+
+    .developer {
+      @apply text-9xl font-thin;
+      letter-spacing: 0.28em;
+    }
+  }
+}

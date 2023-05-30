@@ -10,7 +10,12 @@ const Main = () => {
                 height={500}
                 alt="Picture of the author"
             /></div>
-            <div className="photo"></div>
+            <div className={styles.greetings}>
+                <h2 className={styles.hello}>Привет, я</h2>
+                <h1 className={styles.sergey}>Сергей</h1>
+                <h2 className={styles.frontend}>Frontend</h2>
+                <h2 className={styles.developer}>Developer</h2>
+            </div>
         </div>
     )
 }
