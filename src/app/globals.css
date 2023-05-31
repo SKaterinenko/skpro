@@ -9,8 +9,17 @@
     }
 }
 
+@layer components {
+    .bg-gradient-white {
+        background: linear-gradient(to bottom, transparent, rgb(255, 255, 255)), rgb(214, 219, 220);
+    }
+    .bg-gradient-black {
+        background: linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0);
+    }
+}
+
 body {
-    @apply text-black dark:text-white bg-gradient-white dark:bg-static-black
+    @apply text-black dark:text-white bg-gradient-white dark:bg-gradient-black
 }
 
 

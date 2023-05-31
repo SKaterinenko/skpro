@@ -14,8 +14,8 @@
 
     .counter {
       transition: 1s;
-      @apply text-8xl absolute;
       bottom: 6.25rem;
+      @apply text-8xl absolute;
 
       span {
         @apply border-b-4 pb-1 font-extrabold;
