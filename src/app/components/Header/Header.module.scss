@@ -1,5 +1,5 @@
 .header {
-  @apply flex justify-between w-full relative z-10;
+  @apply flex justify-between w-full relative z-10 items-center;
 
   .logo {
     @apply text-4xl cursor-pointer font-bold;
@@ -10,7 +10,7 @@
       @apply flex justify-between;
 
       li {
-        @apply px-4 text-2xl cursor-pointer font-bold;
+        @apply px-4 text-2xl cursor-pointer font-bold self-center;
       }
     }
   }

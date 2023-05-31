@@ -1,13 +1,24 @@
 .layout {
   @apply mt-8 px-11 #{!important};
   .content {
-    @apply flex gap-20;
+    @apply flex;
+    column-gap: 200px;
 
     .sidebar {
       @apply flex flex-col justify-center;
 
       svg {
         @apply text-4xl mb-8 cursor-pointer;
+      }
+    }
+
+    .counter {
+      transition: 1s;
+      @apply text-8xl absolute;
+      bottom: 6.25rem;
+
+      span {
+        @apply border-b-4 pb-1 font-extrabold;
       }
     }
   }

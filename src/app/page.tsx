@@ -1,87 +1,54 @@
 "use client"
 import ReactFullpage from '@fullpage/react-fullpage';
 import Main from "@/app/pages/Main/Main";
-import {useEffect, useState} from "react";
+
+import {setPage} from "@/app/redux/appSlice";
+import {useAppDispatch, useAppSelector} from "@/app/redux/hooks";
+import Header from "@/app/components/Header/Header";
+import styles from "@/app/layout.module.scss";
+import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
+import React from "react";
+
 
 const Home = () => {
-    const [theme, setTheme] = useState(localStorage.theme)
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-    const handleThemeSwitch = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
-    };
-
-    const setDark = () => {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem("theme", "dark")
-        setTheme("dark")
-    }
-
-    const setLight = () => {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem("theme", "light")
-        setTheme("light")
-    }
-
-    // Если клиент впервые на сайте то поставится тема которая используется в системе
-    const checkTheme = () => {
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
-            setDark()
-        } else {
-            setLight()
-        }
-    }
-
-    // Позволяет кнопки менять тему
-    useEffect(() => {
-        switch (theme) {
-            case "dark" :
-                document.documentElement.classList.add('dark');
-                localStorage.setItem("theme", "dark")
-                break
-            case "light":
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem("theme", "light")
-                break
-            default:
-                localStorage.removeItem("theme")
-                checkTheme()
-                break;
-        }
-
-    }, [theme])
-
-    // Если системная тема поменялась то и сайт тоже поменяет тему
-    darkQuery.addEventListener("change", e => {
-        if (e.matches) {
-            setDark()
-        } else {
-            setLight()
-        }
-    })
-
+    const dispatch = useAppDispatch();
+    const page = useAppSelector(state => state.appReducer.page)
     return (
-        // @ts-ignore
-        <ReactFullpage
-            navigation
-            scrollingSpeed={2000} /* Options here */
-            render={({state, fullpageApi}) => {
-                return (
-                    <ReactFullpage.Wrapper>
-                        <div className="section">
-                            <Main/>
-                            <button type="button" onClick={() => {
-                                handleThemeSwitch()
-                            }}>TOGGLE
-                            </button>
-                        </div>
-                        <div className="section">
-                            <p className="text-cyan-500 dark:text-amber-700">Section 2</p>
-                        </div>
-                    </ReactFullpage.Wrapper>
-                );
-            }}
-        />
+
+        <main className={styles.layout}>
+            <Header/>
+            <div className={styles.content}>
+                <div className={styles.sidebar}>
+                    <div className={styles.links}>
+                        <a href="https://t.me/SKaterinenko" target="_blank"><FaTelegramPlane/></a>
+                        <a href="mailto: skaterinenko@gmail.com" target="_blank"><FaRegEnvelope/></a>
+                        <a href="https://github.com/SKaterinenko" target="_blank"><FaGithub/></a>
+                    </div>
+                </div>
+                <div className={styles.counter}><span>0{page}</span></div>
+                {/*// @ts-ignore*/}
+                <ReactFullpage
+                    navigation
+                    onLeave={(origin, destination) => {
+                        dispatch(setPage(destination.index + 1))
+                    }}
+                    scrollingSpeed={2000} /* Options here */
+                    render={({state, fullpageApi}) => {
+                        console.log(state)
+                        return (
+                            <ReactFullpage.Wrapper>
+                                <div className="section">
+                                    <Main/>
+                                </div>
+                                <div className="section">
+                                    <p className="text-cyan-500 dark:text-amber-700">Section 2</p>
+                                </div>
+                            </ReactFullpage.Wrapper>
+                        );
+                    }}
+                />
+            </div>
+        </main>
     )
 }
 
