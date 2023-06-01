@@ -8,6 +8,7 @@ import Header from "@/app/components/Header/Header";
 
 import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 import React from "react";
+import Skills from "@/app/pages/Skills/Skills";
 
 
 const Home = () => {
@@ -33,7 +34,7 @@ const Home = () => {
                     onLeave={(origin, destination) => {
                         dispatch(setPage(destination.index + 1))
                     }}
-                    scrollingSpeed={2000} /* Options here */
+                    scrollingSpeed={2000}
                     render={({state, fullpageApi}) => {
                         return (
                             <ReactFullpage.Wrapper>
@@ -41,7 +42,7 @@ const Home = () => {
                                     <Main/>
                                 </div>
                                 <div className="section">
-                                    <p className="text-red-600 dark:text-blue-500">Section 2</p>
+                                    <Skills/>
                                 </div>
                             </ReactFullpage.Wrapper>
                         );

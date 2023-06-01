@@ -5,7 +5,7 @@
 
 @layer base {
     html {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat', system-ui;
     }
 }
 
@@ -13,6 +13,7 @@
     .bg-gradient-white {
         background: linear-gradient(to bottom, transparent, rgb(255, 255, 255)), rgb(214, 219, 220);
     }
+
     .bg-gradient-black {
         background: linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0);
     }
@@ -31,6 +32,7 @@ body {
     width: 100%;
 }
 
-#fp-nav ul li a span{
+
+#fp-nav ul li a span {
     @apply bg-black dark:bg-white;
 }
