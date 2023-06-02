@@ -6,58 +6,72 @@ const Skills = () => {
         {
             alt: "Typescript",
             src: "/typescript.png",
+            link: "https://www.typescriptlang.org/",
         },
         {
-            alt: "Antd",
+            alt: "Ant Design",
             src: "/antd.png",
+            link: "https://ant.design/",
         },
         {
-            alt: "Antd",
+            alt: "Bitbucket",
             src: "/bitbucket.png",
+            link: "https://bitbucket.org/",
         },
         {
-            alt: "Antd",
-            src: "/bootstrap.png",
+            alt: "React Bootstrap",
+            src: "/bootstrap.svg",
+            link: "https://react-bootstrap.github.io/",
         },
         {
-            alt: "Antd",
+            alt: "i18next",
             src: "/i18next.png",
+            link: "https://react.i18next.com/",
         },
         {
-            alt: "Antd",
+            alt: "Next.js",
             src: "/nextjs.png",
+            link: "https://nextjs.org/",
         },
         {
-            alt: "Antd",
+            alt: "Redux Toolkit",
             src: "/redux.png",
+            link: "https://redux-toolkit.js.org/",
         },
         {
-            alt: "Antd",
+            alt: "React Hook Form",
             src: "/rhf.png",
+            link: "https://react-hook-form.com/",
         },
         {
-            alt: "Antd",
+            alt: "Sass",
             src: "/sass.png",
+            link: "https://sass-lang.com/",
         },
         {
-            alt: "Antd",
+            alt: "Swiper",
             src: "/swiper.png",
+            link: "https://swiperjs.com/",
         },
         {
-            alt: "Antd",
+            alt: "Tailwind",
             src: "/tailwind.png",
+            link: "https://tailwindcss.com/",
         },
         {
-            alt: "Antd",
+            alt: "Gitlab",
             src: "/gitlab.png",
+            link: "https://about.gitlab.com/",
         },
         {
-            alt: "Antd",
+            alt: "Jira",
             src: "/jira.png",
+            link: "https://www.atlassian.com/ru/software/jira",
         },
         {
-            alt: "Antd",
+            alt: "Figma",
             src: "/figma.png",
+            link: "https://www.figma.com/",
         },
     ]
     return (
@@ -67,15 +81,16 @@ const Skills = () => {
                 <p className="font-light text-3xl mb-6">Для создания современных, высокоскоростных и адаптивных веб
                     приложений, я использую такие технологии как:</p>
                 <div className="grid grid-cols-5 items-center gap-y-7">
-                    {photos.map(({src, alt}) =>
-                        <Image
-                            key={Math.random()}
-                            src={src}
-                            width={70}
-                            height={70}
-                            alt={alt}/>
+                    {photos.map(({src, alt, link}) =>
+                        <a key={Math.random()} href={link}>
+                            <Image
+                                src={src}
+                                width={70}
+                                height={70}
+                                alt={alt}/>
+                        </a>
                     )}
-                    <FaGithub className="text-7xl"/>
+                    <a href="https://github.com/SKaterinenko"><FaGithub className="text-7xl"/></a>
                 </div>
             </div>
             <div className="flex justify-center">
