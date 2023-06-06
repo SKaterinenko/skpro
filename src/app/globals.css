@@ -17,6 +17,36 @@
     .bg-gradient-black {
         background: linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0);
     }
+
+    .bg-grey {
+        background: rgb(214, 219, 220);
+    }
+}
+
+.fp-overflow {
+    overflow: hidden !important;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.fp-overflow::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+@layer utilities {
+    @variants responsive {
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    }
 }
 
 body {

@@ -1,20 +1,20 @@
-import styles from './Main.module.scss'
 import Image from 'next/image';
+
 const Main = () => {
     return (
-        <div className={styles.main}>
-            <div className={styles.photo}>
+        <div className="flex gap-20 w-full">
+            <div>
                 <Image
                 src="/SK.jpg"
                 width={500}
                 height={500}
                 alt="Picture of the author"
             /></div>
-            <div className={styles.greetings}>
-                <h2 className={styles.hello}>Привет, я</h2>
-                <h1 className={styles.sergey}>Сергей</h1>
-                <h2 className={styles.frontend}>Frontend</h2>
-                <h2 className={styles.developer}>Developer</h2>
+            <div>
+                <h2 className="text-4xl font-light">Привет, я</h2>
+                <h1 className="text-8xl font-bold">Сергей</h1>
+                <h2 className="text-9xl font-semibold">Frontend</h2>
+                <h2 className="text-9xl font-thin tracking-widest">Developer</h2>
             </div>
         </div>
     )

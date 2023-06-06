@@ -9,6 +9,7 @@ import Header from "@/app/components/Header/Header";
 import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 import React from "react";
 import Skills from "@/app/pages/Skills/Skills";
+import Projects from "@/app/pages/Projects/Projects";
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
 
         <main className="mt-8 px-11">
             <Header/>
-            <div className="flex gap-x-48">
+            <div className="flex">
                 <div className="flex flex-col justify-center">
                     <div className="text-4xl cursor-pointer">
                         <a href="https://t.me/SKaterinenko" target="_blank"><FaTelegramPlane className="mb-8"/></a>
@@ -28,26 +29,32 @@ const Home = () => {
                 </div>
                 <div
                     className="text-8xl absolute border-b-4 pb-1 border-black dark:border-white font-extrabold bottom-24">0{page}</div>
-                {/*// @ts-ignore*/}
-                <ReactFullpage
-                    navigation
-                    onLeave={(origin, destination) => {
-                        dispatch(setPage(destination.index + 1))
-                    }}
-                    scrollingSpeed={2000}
-                    render={({state, fullpageApi}) => {
-                        return (
-                            <ReactFullpage.Wrapper>
-                                <div className="section">
-                                    <Main/>
-                                </div>
-                                <div className="section">
-                                    <Skills/>
-                                </div>
-                            </ReactFullpage.Wrapper>
-                        );
-                    }}
-                />
+                <div className="px-36">
+                    {/*// @ts-ignore*/}
+                    <ReactFullpage
+                        navigation
+                        onLeave={(origin, destination) => {
+                            dispatch(setPage(destination.index + 1))
+                        }}
+                        scrollingSpeed={2000}
+                        render={({state, fullpageApi}) => {
+                            return (
+                                <ReactFullpage.Wrapper>
+                                    <div className="section">
+                                        <Main/>
+                                    </div>
+                                    <div className="section">
+                                        <Skills/>
+                                    </div>
+                                    <div className="section">
+                                        <Projects/>
+                                    </div>
+                                </ReactFullpage.Wrapper>
+                            );
+                        }}
+                    />
+                </div>
+
             </div>
         </main>
     )

@@ -9,6 +9,9 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
+    letterSpacing: {
+      widest: '.28em',
+    },
     extend: {
       fontFamily: {
         'montserrat': ['Montserrat', 'system-ui']
