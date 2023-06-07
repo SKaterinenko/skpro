@@ -4,7 +4,7 @@ import React from "react";
 
 
 export const metadata = {
-    title: 'SKat - Портфолио',
+    title: 'SKaterinenko - Портфолио',
     description: 'Я Сергей Катериненко Frontend developer и это мое портфолио где хранятся все коммерческие проекты которые я разрабатывал',
 }
 
