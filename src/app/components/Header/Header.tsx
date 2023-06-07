@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 
 const Header = () => {
     const [theme, setTheme] = useState("")
+
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     };

@@ -7,7 +7,6 @@ import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 import React from "react";
 import Skills from "@/app/components/Skills/Skills";
 import Projects from "@/app/components/Projects/Projects";
-import dynamic from "next/dynamic";
 import Header from "@/app/components/Header/Header";
 
 
@@ -15,11 +14,7 @@ const Home = () => {
     const dispatch = useAppDispatch();
     const page = useAppSelector(state => state.appReducer.page)
 
-    const ClientHeader = dynamic(() => import ('@/app/components/Header/Header').then((module) => module.default), {
-        ssr: false,
-    })
     return (
-
         <main className="mt-8 px-11">
             <Header/>
             <div className="flex">
