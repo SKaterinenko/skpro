@@ -21,7 +21,7 @@ const Home = () => {
     return (
 
         <main className="mt-8 px-11">
-            <ClientHeader/>
+            <Header/>
             <div className="flex">
                 <div className="flex flex-col justify-center">
                     <div className="text-4xl cursor-pointer">
