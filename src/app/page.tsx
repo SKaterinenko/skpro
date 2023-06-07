@@ -17,7 +17,6 @@ const Home = () => {
 
     const ClientHeader = dynamic(() => import ('@/app/components/Header/Header').then((module) => module.default), {
         ssr: false,
-        suspense: true,
     })
     return (
 
