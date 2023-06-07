@@ -5,7 +5,7 @@ import React from "react";
 
 export const metadata = {
     title: 'SKpro - Портфолио',
-    description: 'Я Сергей Катериненко frontend developer и это мое портфолио',
+    description: 'Я Сергей Катериненко Frontend developer и это мое портфолио где хранятся все коммерческие проекты которые я разрабатывал',
 }
 
 const Layout = ({children}: { children: React.ReactNode }) => {

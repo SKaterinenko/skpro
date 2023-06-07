@@ -82,7 +82,7 @@ const Skills = () => {
                     приложений, я использую такие технологии как:</p>
                 <div className="grid grid-cols-5 items-center gap-y-7">
                     {photos.map(({src, alt, link}) =>
-                        <a key={Math.random()} href={link}>
+                        <a key={Math.random()} rel="noopener" target="_blank" href={link}>
                             <Image
                                 src={src}
                                 width={70}
@@ -94,12 +94,14 @@ const Skills = () => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <Image
-                    className="object-contain"
-                    src="/react.png"
-                    width={400}
-                    height={400}
-                    alt="React"/>
+                <a className="flex justify-center" href="https://react.dev/" rel="noopener" target="_blank">
+                    <Image
+                        className="object-contain"
+                        src="/react.png"
+                        width={400}
+                        height={400}
+                        alt="React"/>
+                </a>
             </div>
         </div>
     )

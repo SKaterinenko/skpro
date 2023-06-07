@@ -1,5 +1,4 @@
 "use client"
-import styles from './Header.module.scss'
 import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
 
@@ -60,16 +59,16 @@ const Header = () => {
         }
     })
     return (
-        <header className={styles.header}>
-            <div className={styles.logo}>
+        <header className="flex justify-between w-full relative z-10 items-center">
+            <div className="text-4xl cursor-pointer font-bold">
                 <h1>@SKaterinenko</h1>
             </div>
-            <div className={styles.links}>
-                <ul>
-                    <li>Скиллы</li>
-                    <li>Портфолио</li>
-                    <li>Контакты</li>
-                    <li onClick={() => {
+            <div>
+                <ul className="flex justify-between">
+                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Скиллы</li>
+                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Портфолио</li>
+                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Контакты</li>
+                    <li className="px-4 text-2xl cursor-pointer font-bold self-center" onClick={() => {
                         handleThemeSwitch()
                     }}><FaRegMoon className="block dark:hidden"/>
                         <FaRegSun className="hidden dark:block"/>

@@ -1,11 +1,9 @@
 "use client"
 import ReactFullpage from '@fullpage/react-fullpage';
 import Main from "@/app/pages/Main/Main";
-
 import {setPage} from "@/app/redux/appSlice";
 import {useAppDispatch, useAppSelector} from "@/app/redux/hooks";
 import Header from "@/app/components/Header/Header";
-
 import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 import React from "react";
 import Skills from "@/app/pages/Skills/Skills";
