@@ -16,12 +16,13 @@ const Home = () => {
     const page = useAppSelector(state => state.appReducer.page)
 
     const ClientHeader = dynamic(() => import ('@/app/components/Header/Header'), {
-        ssr: false
+        ssr: false,
+        loading: () => <Header/>
     })
     return (
 
         <main className="mt-8 px-11">
-            <Header/>
+            <ClientHeader/>
             <div className="flex">
                 <div className="flex flex-col justify-center">
                     <div className="text-4xl cursor-pointer">
