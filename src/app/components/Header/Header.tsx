@@ -3,7 +3,7 @@ import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
 
 const Header = () => {
-    const [theme, setTheme] = useState(localStorage.theme)
+    const [theme, setTheme] = useState(window.localStorage.theme)
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
     const handleThemeSwitch = () => {
@@ -12,19 +12,19 @@ const Header = () => {
 
     const setDark = () => {
         document.documentElement.classList.add('dark');
-        localStorage.setItem("theme", "dark")
+        window.localStorage.setItem("theme", "dark")
         setTheme("dark")
     }
 
     const setLight = () => {
         document.documentElement.classList.remove('dark');
-        localStorage.setItem("theme", "light")
+        window.localStorage.setItem("theme", "light")
         setTheme("light")
     }
 
     // Если клиент впервые на сайте то поставится тема которая используется в системе
     const checkTheme = () => {
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches)) {
+        if (window.localStorage.theme === 'dark' || (!('theme' in window.localStorage) && darkQuery.matches)) {
             setDark()
         } else {
             setLight()
@@ -36,14 +36,14 @@ const Header = () => {
         switch (theme) {
             case "dark" :
                 document.documentElement.classList.add('dark');
-                localStorage.setItem("theme", "dark")
+                window.localStorage.setItem("theme", "dark")
                 break
             case "light":
                 document.documentElement.classList.remove('dark');
-                localStorage.setItem("theme", "light")
+                window.localStorage.setItem("theme", "light")
                 break
             default:
-                localStorage.removeItem("theme")
+                window.localStorage.removeItem("theme")
                 checkTheme()
                 break;
         }
