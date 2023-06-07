@@ -1,28 +1,28 @@
 "use client"
 import ReactFullpage from '@fullpage/react-fullpage';
-import Main from "@/app/pages/Main/Main";
+import Main from "@/app/components/Main/Main";
 import {setPage} from "@/app/redux/appSlice";
 import {useAppDispatch, useAppSelector} from "@/app/redux/hooks";
-import Header from "@/app/components/Header/Header";
 import {FaGithub, FaRegEnvelope, FaTelegramPlane} from "react-icons/fa";
 import React from "react";
-import Skills from "@/app/pages/Skills/Skills";
-import Projects from "@/app/pages/Projects/Projects";
+import Skills from "@/app/components/Skills/Skills";
+import Projects from "@/app/components/Projects/Projects";
 import dynamic from "next/dynamic";
+import Header from "@/app/components/Header/Header";
 
 
 const Home = () => {
     const dispatch = useAppDispatch();
     const page = useAppSelector(state => state.appReducer.page)
 
-    const ClientHeader = dynamic(() => import ('@/app/components/Header/Header'), {
+    const ClientHeader = dynamic(() => import ('@/app/components/Header/Header').then((module) => module.default), {
         ssr: false,
-        loading: () => <Header/>
+        suspense: true,
     })
     return (
 
         <main className="mt-8 px-11">
-            <ClientHeader/>
+            <Header/>
             <div className="flex">
                 <div className="flex flex-col justify-center">
                     <div className="text-4xl cursor-pointer">

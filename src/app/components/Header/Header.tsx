@@ -3,36 +3,36 @@ import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
 
 const Header = () => {
-    const [theme, setTheme] = useState(window.localStorage.theme)
-    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
+    const [theme, setTheme] = useState("")
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     };
 
-    const setDark = () => {
-        document.documentElement.classList.add('dark');
-        window.localStorage.setItem("theme", "dark")
-        setTheme("dark")
-    }
-
-    const setLight = () => {
-        document.documentElement.classList.remove('dark');
-        window.localStorage.setItem("theme", "light")
-        setTheme("light")
-    }
-
-    // Если клиент впервые на сайте то поставится тема которая используется в системе
-    const checkTheme = () => {
-        if (window.localStorage.theme === 'dark' || (!('theme' in window.localStorage) && darkQuery.matches)) {
-            setDark()
-        } else {
-            setLight()
-        }
-    }
-
     // Позволяет кнопки менять тему
     useEffect(() => {
+
+        const darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+        const setDark = () => {
+            document.documentElement.classList.add('dark');
+            window.localStorage.setItem("theme", "dark")
+            setTheme("dark")
+        }
+
+        const setLight = () => {
+            document.documentElement.classList.remove('dark');
+            window.localStorage.setItem("theme", "light")
+            setTheme("light")
+        }
+
+        // Если клиент впервые на сайте то поставится тема которая используется в системе
+        const checkTheme = () => {
+            if (window.localStorage.theme === 'dark' || (!('theme' in window.localStorage) && darkQuery.matches)) {
+                setDark()
+            } else {
+                setLight()
+            }
+        }
         switch (theme) {
             case "dark" :
                 document.documentElement.classList.add('dark');
@@ -47,17 +47,17 @@ const Header = () => {
                 checkTheme()
                 break;
         }
-
+        // Если системная тема поменялась то и сайт тоже поменяет тему
+        darkQuery.addEventListener("change", e => {
+            if (e.matches) {
+                setDark()
+            } else {
+                setLight()
+            }
+        })
     }, [theme])
 
-    // Если системная тема поменялась то и сайт тоже поменяет тему
-    darkQuery.addEventListener("change", e => {
-        if (e.matches) {
-            setDark()
-        } else {
-            setLight()
-        }
-    })
+
     return (
         <header className="flex justify-between w-full relative z-10 items-center">
             <div className="text-4xl cursor-pointer font-bold">
