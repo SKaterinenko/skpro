@@ -1,6 +1,7 @@
 "use client"
 import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
+import Link from "next/link";
 
 const Header = () => {
     const [theme, setTheme] = useState("")
@@ -62,7 +63,9 @@ const Header = () => {
     return (
         <header className="flex justify-between w-full relative z-10 items-center">
             <div className="text-4xl cursor-pointer font-bold">
-                <h1>@SKaterinenko</h1>
+                <Link href="/">
+                    <h1>@SKaterinenko</h1>
+                </Link>
             </div>
             <div>
                 <ul className="flex justify-between">
