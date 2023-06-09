@@ -23,10 +23,20 @@ export const ProjectsData: ProjectType[] = [
         description: "Description Text",
         link: "https://www.finalley.net",
         stack: "NextJS, ReactJS, TypeScript, RTK Query, React Bootstrap",
-        photos: [{id: 1, link: "/projects/finAlley1.png"}, {id: 2, link: "/projects/finAlley2.png"}, {
-            id: 3,
-            link: "/projects/finAlley3.png"
-        },{id: 2, link: "/projects/finAlley2.png"},{id: 1, link: "/projects/finAlley3.png"},{id: 3, link: "/projects/finAlley1.png"},{id: 2, link: "/projects/finAlley2.png"},{id: 3, link: "/projects/finAlley1.png"},{id: 1, link: "/projects/finAlley2.png"},{id: 2, link: "/projects/finAlley1.png"},{id: 2, link: "/projects/finAlley1.png"},]
+        photos: [
+            {id: 1, link: "/projects/finAlley/finAlley1.png"},
+            {id: 2, link: "/projects/finAlley/finAlley2.png"},
+            {id: 3, link: "/projects/finAlley/finAlley3.png"},
+            {id: 4, link: "/projects/finAlley/finAlley4.png"},
+            {id: 5, link: "/projects/finAlley/finAlley5.png"},
+            {id: 6, link: "/projects/finAlley/finAlley6.png"},
+            {id: 7, link: "/projects/finAlley/finAlley7.png"},
+            {id: 8, link: "/projects/finAlley/finAlley8.png"},
+            {id: 9, link: "/projects/finAlley/finAlley9.png"},
+            {id: 10, link: "/projects/finAlley/finAlley10.png"},
+            {id: 11, link: "/projects/finAlley/finAlley11.png"},
+            {id: 12, link: "/projects/finAlley/finAlley12.png"},
+        ]
     },
     {
         id: "2",
