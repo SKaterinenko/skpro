@@ -1,11 +1,13 @@
+"use client"
 import {Fragment, useState} from "react";
 import {Dialog, Transition} from "@headlessui/react";
 import Image from "next/image";
 
 type PropsType = {
     link: string
+    shortDescription: string
 }
-const Modal = ({link}: PropsType) => {
+const Modal = ({link, shortDescription}: PropsType) => {
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -18,7 +20,7 @@ const Modal = ({link}: PropsType) => {
 
     return (<>
             <Image
-                alt="Next.js Conf photo"
+                alt={shortDescription}
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{transform: 'translate3d(0, 0, 0)'}}
                 src={link}
@@ -59,7 +61,7 @@ const Modal = ({link}: PropsType) => {
                                     className="w-8/12 transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                                     <div className="mt-2 relative aspect-[3/2] max-h-full w-full">
                                         <Image
-                                            alt="Next.js Conf photo"
+                                            alt={shortDescription}
                                             className="object-contain"
                                             style={{transform: 'translate3d(0, 0, 0)'}}
                                             src={link}
