@@ -3,10 +3,6 @@ import Image from "next/image";
 import Layout from "@/app/projects/[id]/layout";
 import Header from "@/app/components/Header/Header";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
 import Modal from "@/app/projects/[id]/Modal";
 
 export async function generateMetadata({params}: { params: { id: string } }) {
