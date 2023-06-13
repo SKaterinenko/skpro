@@ -25,7 +25,7 @@ const Home = () => {
     if (isLoading) return <Preloader/>
 
     return (
-        <main className="mt-8 px-11">
+        <main className="mt-8 md:px-11 px-2">
             <Header/>
             <div className="flex">
                 <div className="hidden md:flex flex-col justify-center">
