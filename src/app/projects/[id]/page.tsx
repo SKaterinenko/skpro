@@ -29,13 +29,16 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
 
     return (
         <Layout>
-            <main className="mt-8 px-11 pb-5 min-h-screen">
+            <main className="mt-8 md:px-11 px-2 pb-5 min-h-screen">
                 <Header/>
-                <div className=" mt-20">
+                <div className="mt-20">
                     <div className="flex">
-                        <Sidebar/>
-                        <div className="px-36 w-full">
-                            <div className="grid grid-cols-2">
+                        <div className="md:block hidden">
+                            <Sidebar/>
+                        </div>
+
+                        <div className="md:px-36 px-5 w-full">
+                            <div className="grid md:grid-cols-2 grid-cols-1">
                                 <div>
                                     <h2 className="text-4xl">{shortDescription}</h2>
                                     <p className="mt-5 rounded text-2xl">It is a long established fact that a reader
@@ -47,7 +50,7 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
                                         more-or-less normal distribution of letters, as opposed to using Content </p>
                                     <p className="mt-10 text-2xl">Стек: {stack}</p>
                                 </div>
-                                <div className="flex justify-center flex-col align-center items-center text-center">
+                                <div className="mt-10 md:mt-0 flex justify-center flex-col align-center items-center text-center">
                                     <a href={project.link} rel="noopener" target="_blank">
                                         <div className="w-96 h-52 bg-grey rounded-2xl flex justify-center">
                                             <Image className="object-contain" width={250} height={150}
@@ -58,7 +61,7 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
                                     </a>
                                 </div>
                             </div>
-                            <div className="columns-4 mt-14">
+                            <div className="md:columns-4 columns-2 mt-14">
                                 {photos.map(({id, link}) => (
                                     <div key={id}
                                          className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight">

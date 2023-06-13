@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import Link from "next/link";
 
 const Header = () => {
-    const [theme, setTheme] = useState("")
+    const [theme, setTheme] = useState(window.localStorage.getItem("theme"))
 
     const handleThemeSwitch = () => {
         setTheme(theme === "dark" ? "light" : "dark");
@@ -62,16 +62,22 @@ const Header = () => {
 
     return (
         <header className="flex justify-between w-full relative z-10 items-center">
-            <div className="text-4xl cursor-pointer font-bold">
+            <div className="md:text-4xl text-2xl cursor-pointer font-bold">
                 <Link href="/">
                     <h1>@SKaterinenko</h1>
                 </Link>
             </div>
             <div>
-                <ul className="flex justify-between">
-                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Скиллы</li>
-                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Портфолио</li>
-                    <li className="px-4 text-2xl cursor-pointer font-bold self-center">Контакты</li>
+                <ul className="md:flex hidden justify-between">
+                    <li data-menuanchor="page1" className="px-4 text-2xl cursor-pointer font-bold self-center">
+                        <a href="#skills">
+                            Скиллы
+                        </a>
+                    </li>
+                    <li data-menuanchor="page2"
+                        className="px-4 text-2xl cursor-pointer font-bold self-center">
+                        <a href="#projects">Портфолио</a>
+                    </li>
                     <li className="px-4 text-2xl cursor-pointer font-bold self-center" onClick={() => {
                         handleThemeSwitch()
                     }}><FaRegMoon className="block dark:hidden"/>

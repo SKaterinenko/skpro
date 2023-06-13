@@ -16,16 +16,16 @@ const Projects = () => {
     }, [currentPage]);
 
     return (
-        <>
-            <div className="grid grid-cols-3 gap-10">
+        <div className="flex flex-col w-full h-screen justify-center items-center snap-center relative duration-1000">
+            <div className="md:grid-cols-3 grid grid-cols-1 gap-10" id="projects">
                 {currentTableData.map(({logo, shortDescription, id}) =>
                     <Link key={id} href={`/projects/${id}`}>
                         <div className="cursor-pointer">
-                            <div className="w-full h-40 bg-grey rounded-md flex justify-center mb-9">
+                            <div className="w-full md:h-40 h-24 bg-grey rounded-md flex justify-center mb-9">
                                 <Image className="object-contain" width={250} height={150} src={logo}
                                        alt={shortDescription}/>
                             </div>
-                            <h2 className="font-medium text-3xl">{shortDescription}</h2>
+                            <h2 className="font-medium md:text-3xl text-xl">{shortDescription}</h2>
                         </div>
                     </Link>)}
 
@@ -37,7 +37,7 @@ const Projects = () => {
                 pageSize={PageSize}
                 onPageChange={(page:number) => setCurrentPage(page)}
             />
-        </>
+        </div>
 
     )
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 const Sidebar = () => {
     return (
-        <div className="flex flex-col justify-center">
+        <div className="">
             <div className="text-4xl cursor-pointer">
                 <a href="https://t.me/SKaterinenko" target="_blank"><FaTelegramPlane className="mb-8"/></a>
                 <a href="mailto: skaterinenko@gmail.com" target="_blank"><FaRegEnvelope className="mb-8"/></a>

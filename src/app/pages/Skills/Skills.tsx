@@ -75,12 +75,12 @@ const Skills = () => {
         },
     ]
     return (
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full h-screen justify-center items-center snap-center relative duration-1000" id="skills">
             <div>
-                <h2 className="font-bold text-5xl mb-5">Я React Frontend Developer</h2>
-                <p className="font-light text-3xl mb-6">Для создания современных, высокоскоростных и адаптивных веб
+                <h2 className="font-bold md:text-5xl text-2xl mb-5">Я React Frontend Developer</h2>
+                <p className="font-light md:text-3xl text-xl mb-6">Для создания современных, высокоскоростных и адаптивных веб
                     приложений, я использую такие технологии как:</p>
-                <div className="grid grid-cols-5 items-center gap-y-7">
+                <div className="grid md:grid-cols-5 grid-cols-3 mt-5 items-center gap-y-7">
                     {photos.map(({src, alt, link}) =>
                         <a key={Math.random()} rel="noopener" target="_blank" href={link}>
                             <Image
@@ -93,7 +93,7 @@ const Skills = () => {
                     <a href="https://github.com/SKaterinenko"><FaGithub className="text-7xl"/></a>
                 </div>
             </div>
-            <div className="flex justify-center">
+            <div className="hidden md:flex justify-center">
                 <a className="flex justify-center" href="https://react.dev/" rel="noopener" target="_blank">
                     <Image
                         className="object-contain"
