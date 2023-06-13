@@ -10,7 +10,7 @@ const Main = () => {
     const sectionRef = useRef<any>();
 
     return (
-        <div className="flex gap-20 w-full h-screen justify-center items-center snap-center relative duration-1000"
+        <div className="flex gap-20 w-full min-h-screen justify-center items-center snap-center relative duration-1000"
              id="page1" ref={sectionRef}>
             <div className="transition-all hidden md:block">
                 <Image

@@ -3,12 +3,13 @@ import {ProjectsData} from "@/app/projects/ProjectData";
 import Link from "next/link";
 import React, {useMemo, useState} from 'react';
 import Pagination from "@/app/components/Pagination/Pagination";
+import {useMediaQuery} from "react-responsive";
 
-let PageSize = 6;
 
 const Projects = () => {
     const [currentPage, setCurrentPage] = useState(1);
-
+    const isTablet = useMediaQuery({query: '(max-width: 768px)'})
+    const PageSize = isTablet ? 2 : 6;
     const currentTableData = useMemo(() => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
@@ -16,7 +17,8 @@ const Projects = () => {
     }, [currentPage]);
 
     return (
-        <div className="flex flex-col w-full h-screen justify-center items-center snap-center relative duration-1000">
+        <div
+            className="flex flex-col w-full min-h-screen justify-center items-center snap-center relative duration-1000">
             <div className="md:grid-cols-3 grid grid-cols-1 gap-10" id="projects">
                 {currentTableData.map(({logo, shortDescription, id}) =>
                     <Link key={id} href={`/projects/${id}`}>
@@ -35,7 +37,7 @@ const Projects = () => {
                 currentPage={currentPage}
                 totalCount={ProjectsData.length}
                 pageSize={PageSize}
-                onPageChange={(page:number) => setCurrentPage(page)}
+                onPageChange={(page: number) => setCurrentPage(page)}
             />
         </div>
 
