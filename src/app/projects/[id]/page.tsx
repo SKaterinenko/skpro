@@ -25,7 +25,7 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
     const project = ProjectsData.find(check)
     if (!project) return <div>Loading...</div>
 
-    const { shortDescription,logo, stack, link, photos} = project
+    const {shortDescription, logo, stack, link, photos, description} = project
 
     return (
         <Layout>
@@ -41,16 +41,11 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
                             <div className="grid md:grid-cols-2 grid-cols-1">
                                 <div>
                                     <h2 className="text-4xl">{shortDescription}</h2>
-                                    <p className="mt-5 rounded text-2xl">It is a long established fact that a reader
-                                        will be
-                                        distracted
-                                        by the readable content of
-                                        a page when looking at its layout. The point of using Lorem Ipsum is that it has
-                                        a
-                                        more-or-less normal distribution of letters, as opposed to using Content </p>
+                                    <p className="mt-5 rounded text-2xl">{description}</p>
                                     <p className="mt-10 text-2xl">Стек: {stack}</p>
                                 </div>
-                                <div className="mt-10 md:mt-0 flex justify-center flex-col align-center items-center text-center">
+                                <div
+                                    className="mt-10 md:mt-0 flex justify-center flex-col align-center items-center text-center">
                                     <a href={project.link} rel="noopener" target="_blank">
                                         <div className="w-96 h-52 bg-grey rounded-2xl flex justify-center">
                                             <Image className="object-contain" width={250} height={150}

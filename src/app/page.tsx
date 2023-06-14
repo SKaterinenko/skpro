@@ -1,6 +1,5 @@
 "use client"
 import Main from "@/app/pages/Main/Main";
-import {useAppDispatch, useAppSelector} from "@/app/redux/hooks";
 import React, {useEffect, useRef, useState} from "react";
 import Header from "@/app/components/Header/Header";
 import Sidebar from "@/app/components/Sidebar/Sidebar";
@@ -11,9 +10,7 @@ import Preloader from "@/app/components/Preloader/Preloader";
 
 
 const Home = () => {
-    const dispatch = useAppDispatch();
     const [isLoading, setIsLoading] = useState(true)
-    const page = useAppSelector(state => state.appReducer.page)
     const section1 = useRef<any>();
     const section2 = useRef<any>();
     const section3 = useRef<any>();

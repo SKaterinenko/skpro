@@ -1,7 +1,5 @@
-import {Providers} from "@/app/redux/provider";
 import React from "react";
 import {Metadata} from "next";
-
 
 export const metadata: Metadata = {
     title: 'SKaterinenko - Портфолио',
@@ -14,9 +12,7 @@ const Layout = ({children}: { children: React.ReactNode }) => {
     return (
         <html lang="en">
         <body>
-        <Providers>
-            {children}
-        </Providers>
+        {children}
         </body>
         </html>
     )
