@@ -23,7 +23,7 @@ const Projects = () => {
                 {currentTableData.map(({logo, shortDescription, id}) =>
                     <Link key={id} href={`/projects/${id}`}>
                         <div className="cursor-pointer">
-                            <div className="min-w-full md:h-40 h-24 bg-grey rounded-md flex justify-center mb-9">
+                            <div className="min-w-full md:h-40 h-24 bg-grey rounded-md flex justify-center mb-9 p-2">
                                 <Image className="object-contain" width={250} height={150} src={logo}
                                        alt={shortDescription}/>
                             </div>

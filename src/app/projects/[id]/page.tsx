@@ -29,7 +29,7 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
 
     return (
         <Layout>
-            <main className="mt-8 md:px-11 px-2 pb-5 min-h-screen">
+            <main className="md:px-11 px-2 pb-5 min-h-screen">
                 <Header/>
                 <div className="mt-20">
                     <div className="flex">
