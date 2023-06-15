@@ -8,7 +8,6 @@ import Skills from "@/app/pages/Skills/Skills";
 import Projects from "@/app/projects/Projects";
 import Preloader from "@/app/components/Preloader/Preloader";
 
-
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true)
     const section1 = useRef<any>();

@@ -1,10 +1,10 @@
 "use client"
 import {useState} from "react";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import FsLightbox from "fslightbox-react";
 
 type PropsType = {
-    link: string
+    link: StaticImageData
     shortDescription: string
 }
 const Modal = ({link, shortDescription}: PropsType) => {
@@ -13,6 +13,7 @@ const Modal = ({link, shortDescription}: PropsType) => {
     return (<>
             <Image
                 alt={shortDescription}
+                placeholder="blur"
                 className="transform rounded-lg brightness-90 transition will-change-auto group-hover:brightness-110"
                 style={{transform: 'translate3d(0, 0, 0)'}}
                 src={link}
@@ -28,7 +29,17 @@ const Modal = ({link, shortDescription}: PropsType) => {
             <FsLightbox
                 toggler={toggle}
                 sources={[
-                    link,
+                    <Image
+                        key={Math.random()}
+                        alt={shortDescription}
+                        placeholder="blur"
+                        className="object-contain w-full h-full"
+                        style={{transform: 'translate3d(0, 0, 0)'}}
+                        src={link}
+                        onClick={() => setToggle(!toggle)}
+                        fill
+
+                    />
                 ]}
             />
         </>

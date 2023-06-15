@@ -24,13 +24,12 @@ const Projects = () => {
                     <Link key={id} href={`/projects/${id}`}>
                         <div className="cursor-pointer">
                             <div className="min-w-full md:h-40 h-24 bg-grey rounded-md flex justify-center mb-9 p-2">
-                                <Image className="object-contain" width={250} height={150} src={logo}
+                                <Image className="object-contain" priority={true} width={250} height={150} src={logo}
                                        alt={shortDescription}/>
                             </div>
                             <h2 className="font-medium md:text-3xl text-xl">{shortDescription}</h2>
                         </div>
                     </Link>)}
-
             </div>
             <Pagination
                 className="pagination-bar flex justify-center mt-16"
@@ -40,7 +39,6 @@ const Projects = () => {
                 onPageChange={(page: number) => setCurrentPage(page)}
             />
         </div>
-
     )
 }
 
