@@ -61,7 +61,8 @@ const Header = () => {
 
 
     return (
-        <header className="flex py-3 md:justify-between justify-center w-full relative z-10 items-center">
+        <header
+            className="absolute top-0 md:px-11 px-2 left-0 flex py-3 md:justify-between justify-center w-full z-10 items-center">
             <div className="md:text-4xl text-2xl cursor-pointer font-bold md:px-0 px-2">
                 <Link href="/">
                     <h1>@SKaterinenko</h1>

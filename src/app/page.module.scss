@@ -3,6 +3,7 @@
   overflow-y: auto;
   overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
+  min-height: 100vh;
   height: 100vh;
   scroll-behavior: smooth;
   width: 100%;

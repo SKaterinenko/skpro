@@ -14,6 +14,7 @@ import gitlab from "../../../../public/gitlab.png";
 import jira from "../../../../public/jira.png";
 import figma from "../../../../public/figma.png";
 import bootstrap from "../../../../public/bootstrap.png";
+import react from "../../../../public/react.png";
 
 const Skills = () => {
     const photos = [
@@ -119,9 +120,10 @@ const Skills = () => {
                 <a className="flex justify-center" href="https://react.dev/" rel="noopener" target="_blank">
                     <Image
                         className="object-contain"
-                        src="/react.png"
+                        src={react}
                         width={400}
                         height={400}
+                        placeholder="blur"
                         alt="React"/>
                 </a>
             </div>
