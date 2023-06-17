@@ -13,6 +13,9 @@ module.exports = {
       widest: '.28em',
     },
     extend: {
+        screens: {
+            '3xl': '1756px',
+        },
       fontFamily: {
         'montserrat': ['Montserrat', 'system-ui']
       },

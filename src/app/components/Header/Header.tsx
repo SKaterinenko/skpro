@@ -2,6 +2,8 @@
 import {FaRegMoon, FaRegSun} from "react-icons/fa";
 import {useEffect, useState} from "react";
 import Link from "next/link";
+import {WiDaySunny} from "react-icons/wi";
+import {ImSun} from "react-icons/im";
 
 const Header = () => {
     const [theme, setTheme] = useState(window.localStorage.getItem("theme"))
@@ -62,27 +64,27 @@ const Header = () => {
 
     return (
         <header
-            className="absolute top-0 md:px-11 px-2 left-0 flex py-3 md:justify-between justify-center w-full z-10 items-center">
+            className="absolute top-0 md:px-11 px-2 left-0 flex py-3 justify-between w-full z-10 items-center">
             <div className="md:text-4xl text-2xl cursor-pointer font-bold md:px-0 px-2">
                 <Link href="/">
                     <h1>@SKaterinenko</h1>
                 </Link>
             </div>
             <div>
-                <ul className="md:flex hidden justify-between">
-                    <li data-menuanchor="page1" className="px-4 text-2xl cursor-pointer font-bold self-center">
+                <ul className="flex">
+                    <li data-menuanchor="page1" className="md:block hidden px-4 text-2xl cursor-pointer font-bold self-center">
                         <a href="#skills">
                             Скиллы
                         </a>
                     </li>
                     <li data-menuanchor="page2"
-                        className="px-4 text-2xl cursor-pointer font-bold self-center">
+                        className="md:block hidden px-4 text-2xl cursor-pointer font-bold self-center">
                         <a href="#projects">Портфолио</a>
                     </li>
                     <li className="px-4 text-2xl cursor-pointer font-bold self-center" onClick={() => {
                         handleThemeSwitch()
                     }}><FaRegMoon className="block dark:hidden"/>
-                        <FaRegSun className="hidden dark:block"/>
+                        <ImSun className="hidden dark:block"/>
                     </li>
                 </ul>
             </div>

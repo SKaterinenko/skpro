@@ -21,14 +21,14 @@ const Home = () => {
     if (isLoading) return <Preloader/>
 
     return (
-        <main className="md:px-11 px-2">
+        <main className="lg:px-11 px-2">
             <Header/>
             <div className="flex">
-                <div className="hidden md:flex flex-col justify-center">
+                <div className="hidden lg:flex flex-col justify-center">
                     <Sidebar/>
                 </div>
-                <div className="md:px-36 px-5">
-                    <div className={`container ${styles.container}`}>
+                <div className="2xl:px-36 lg:px-14 px-5">
+                    <div className={`${styles.container}`}>
                         <div ref={section1}>
                             <Main/>
                         </div>

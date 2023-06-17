@@ -1,3 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .bg-grey {
+    background: rgb(214, 219, 220);
+  }
+}
+
 .pagination-container {
   display: flex;
   list-style-type: none;

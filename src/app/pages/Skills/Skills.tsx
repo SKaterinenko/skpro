@@ -91,20 +91,19 @@ const Skills = () => {
     ]
     return (
         <div
-            className="grid grid-cols-1 md:text-left text-center md:grid-cols-2 w-full min-h-screen justify-center items-center snap-center relative duration-1000"
+            className="grid grid-cols-1 md:text-left text-center xl:grid-cols-2 w-full min-h-screen justify-center items-center snap-center relative duration-1000"
             id="skills">
             <div>
-                <h2 className="font-bold md:text-5xl text-2xl mb-5">Я React Frontend Developer</h2>
-
-                <p className="font-light md:text-3xl text-xl mb-6">Для создания современных, высокоскоростных и
+                <h2 className="font-bold lg:text-5xl text-2xl mb-5">Я React Frontend Developer</h2>
+                <p className="font-light lg:text-3xl text-xl mb-6">Для создания современных, высокоскоростных и
                     адаптивных веб
                     приложений, я использую такие технологии как:</p>
-                <div className="grid md:grid-cols-5 grid-cols-3 mt-5 items-center gap-y-7">
+                <div className="grid md:grid-cols-5 xl:grid-cols-5 grid-cols-3 mt-5 gap-y-7">
                     {photos.map(({src, alt, link}) =>
-                        <a key={Math.random()} className="flex justify-center" rel="noopener" target="_blank"
+                        <a key={Math.random()} className="flex justify-center md:justify-start" rel="noopener" target="_blank"
                            href={link}>
                             <Image
-                                className="md:w-20 md:h-20 w-10 h-10 "
+                                className="lg:w-70 lg:h-70 md:w-20 md:h-20 w-10 h-10 "
                                 src={src}
                                 width={70}
                                 height={70}
@@ -112,11 +111,11 @@ const Skills = () => {
                                 alt={alt}/>
                         </a>
                     )}
-                    <a className="flex justify-center" href="https://github.com/SKaterinenko"><FaGithub
+                    <a className="flex justify-center md:justify-start" href="https://github.com/SKaterinenko"><FaGithub
                         className="md:text-7xl text-4xl"/></a>
                 </div>
             </div>
-            <div className="hidden md:flex justify-center">
+            <div className="hidden xl:flex justify-center">
                 <a className="flex justify-center" href="https://react.dev/" rel="noopener" target="_blank">
                     <Image
                         className="object-contain"

@@ -34,15 +34,15 @@ const ProjectDetail = ({params}: { params: { id: string } }) => {
                     <div className="md:block hidden">
                         <Sidebar/>
                     </div>
-                    <div className="md:px-36 px-5 w-full">
-                        <div className="grid md:grid-cols-2 grid-cols-1">
+                    <div className="xl:px-36 lg:px-10 px-5 w-full">
+                        <div className="grid lg:grid-cols-2 grid-cols-1">
                             <div>
                                 <h2 className="text-4xl">{shortDescription}</h2>
                                 <p className="mt-5 rounded text-2xl">{description}</p>
                                 <p className="mt-10 text-2xl">Стек: {stack}</p>
                             </div>
                             <div
-                                className="mt-10 md:mt-0 flex justify-center flex-col align-center items-center text-center">
+                                className="mt-10 lg:mt-0 flex justify-center flex-col align-center items-center text-center">
                                 <a href={project.link} className="w-full sm:w-3/5" rel="noopener" target="_blank">
                                     <div className="w-full h-52 bg-grey p-2 rounded-2xl flex justify-center">
                                         <Image className="object-contain" width={250} height={150}

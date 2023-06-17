@@ -8,8 +8,18 @@ import {useMediaQuery} from "react-responsive";
 
 const Projects = () => {
     const [currentPage, setCurrentPage] = useState(1);
-    const isTablet = useMediaQuery({query: '(max-width: 768px)'})
-    const PageSize = isTablet ? 2 : 6;
+    const isPhone = useMediaQuery({query: '(max-width: 768px)'})
+    const isTablet = useMediaQuery({query: '(max-width: 1280px)'})
+    let PageSize = 2
+
+    if (isPhone) {
+        PageSize = 2
+    } else if (isTablet) {
+        PageSize = 4
+    } else {
+        PageSize = 6
+    }
+
     const currentTableData = useMemo(() => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
@@ -19,7 +29,7 @@ const Projects = () => {
     return (
         <div
             className="flex flex-col w-full min-h-screen justify-center items-center snap-center relative duration-1000">
-            <div className="md:grid-cols-3 grid grid-cols-1 gap-10" id="projects">
+            <div className="md:grid-cols-2 xl:grid-cols-3 grid grid-cols-1 gap-10" id="projects">
                 {currentTableData.map(({logo, shortDescription, id}) =>
                     <Link key={id} href={`/projects/${id}`}>
                         <div className="cursor-pointer">
