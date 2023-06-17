@@ -14,7 +14,7 @@ const Main = () => {
              id="page1" ref={sectionRef}>
             <div className="transition-all hidden md:block">
                 <Image
-                    src="/Sergey_Katerinenko.png"
+                    src="/SergeyKaterinenko.png"
                     width={800}
                     height={800}
                     alt="Sergey Katerinenko"
