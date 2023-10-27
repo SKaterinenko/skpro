@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: [
@@ -7,19 +6,19 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: "class",
+  darkMode: 'class',
   theme: {
     letterSpacing: {
       widest: '.28em',
     },
     extend: {
-        screens: {
-            '3xl': '1756px',
-        },
+      screens: {
+        '3xl': '1756px',
+      },
       fontFamily: {
-        'montserrat': ['Montserrat', 'system-ui']
+        montserrat: ['Montserrat', 'system-ui'],
       },
     },
   },
   plugins: [],
-}
+};

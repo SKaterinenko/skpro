@@ -14,10 +14,8 @@
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
-    "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "fslightbox-react": "^1.7.4",
-    "gsap": "^3.12.1",
     "next": "13.4.4",
     "postcss": "8.4.24",
     "react": "18.2.0",
@@ -30,6 +28,15 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/fslightbox-react": "^1.7.3"
+    "@types/fslightbox-react": "^1.7.3",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
