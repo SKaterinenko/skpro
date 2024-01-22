@@ -39,8 +39,7 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
                 <h2 className="text-4xl">{shortDescription}</h2>
                 <p className="mt-5 rounded text-2xl">{description}</p>
                 <p className="mt-10 text-2xl">
-                  Стек:
-                  {stack}
+                  {`Стек: ${stack}`}
                 </p>
               </div>
               <div
