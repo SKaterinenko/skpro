@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Header from '@/app/components/Header/Header';
+import Preloader from '@/app/components/Preloader/Preloader';
 import Sidebar from '@/app/components/Sidebar/Sidebar';
 import Modal from '@/app/projects/[id]/Modal';
 import { ProjectsData, ProjectType } from '@/app/projects/ProjectData';
@@ -18,7 +19,7 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
   const check = (el: ProjectType) => el.id === params.id;
 
   const project = ProjectsData.find(check);
-  if (!project) return <div>Loading...</div>;
+  if (!project) return <Preloader />;
 
   const {
     shortDescription, logo, stack, link, photos, description,

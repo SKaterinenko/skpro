@@ -84,12 +84,16 @@ const Header = () => {
           </li>
           <li
             className="px-4 text-2xl cursor-pointer font-bold self-center"
-            onClick={() => {
-              handleThemeSwitch();
-            }}
           >
-            <FaRegMoon className="block dark:hidden" />
-            <ImSun className="hidden dark:block" />
+            <button
+              type="button"
+              onClick={() => {
+                handleThemeSwitch();
+              }}
+            >
+              <FaRegMoon className="block dark:hidden" />
+              <ImSun className="hidden dark:block" />
+            </button>
           </li>
         </ul>
       </div>

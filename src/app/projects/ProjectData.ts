@@ -66,6 +66,17 @@ import mate6 from '../../../public/projects/mate/mate6.png';
 import mate7 from '../../../public/projects/mate/mate7.png';
 import mate8 from '../../../public/projects/mate/mate8.png';
 import mate9 from '../../../public/projects/mate/mate9.png';
+import skylab1 from '../../../public/projects/skylab/skylab1.png';
+import skylab10 from '../../../public/projects/skylab/skylab10.png';
+import skylab11 from '../../../public/projects/skylab/skylab11.png';
+import skylab2 from '../../../public/projects/skylab/skylab2.png';
+import skylab3 from '../../../public/projects/skylab/skylab3.png';
+import skylab4 from '../../../public/projects/skylab/skylab4.png';
+import skylab5 from '../../../public/projects/skylab/skylab5.png';
+import skylab6 from '../../../public/projects/skylab/skylab6.png';
+import skylab7 from '../../../public/projects/skylab/skylab7.png';
+import skylab8 from '../../../public/projects/skylab/skylab8.png';
+import skylab9 from '../../../public/projects/skylab/skylab9.png';
 import techyard1 from '../../../public/projects/techyard/techyard1.png';
 import techyard2 from '../../../public/projects/techyard/techyard2.png';
 import techyard3 from '../../../public/projects/techyard/techyard3.png';
@@ -95,6 +106,28 @@ type PhotosType = {
 export const ProjectsData: ProjectType[] = [
   {
     id: '1',
+    name: 'SkyLab',
+    shortDescription: 'Конструктор соц.сетей SkyLab',
+    logo: '/projects/skylab/skylab.svg',
+    description: 'Проект позволял создавать свои сообщества, свои социальные сети с гибкой настройкой. Клиенту достаточно было настроить соц.сеть в админской панели не прибегая к изменению кода.',
+    link: 'https://skylab.world',
+    stack: 'NextJS, ReactJS, TypeScript, Socket.io, Zustand',
+    photos: [
+      { id: 1, link: skylab1 },
+      { id: 2, link: skylab2 },
+      { id: 3, link: skylab3 },
+      { id: 4, link: skylab4 },
+      { id: 5, link: skylab5 },
+      { id: 6, link: skylab6 },
+      { id: 7, link: skylab7 },
+      { id: 8, link: skylab8 },
+      { id: 9, link: skylab9 },
+      { id: 10, link: skylab10 },
+      { id: 11, link: skylab11 },
+    ],
+  },
+  {
+    id: '2',
     name: 'FinAlley',
     shortDescription: 'Торговля криптовалютой FinAlley',
     logo: '/projects/finAlley/finalley.svg',
@@ -117,10 +150,9 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '2',
+    id: '3',
     name: 'MATE LMS',
-    shortDescription: 'Учебная платформа \n'
-            + 'MATE LMS',
+    shortDescription: 'Учебная платформа MATE LMS',
     logo: '/projects/mate/mate.svg',
     description: 'Разрабатывал с нуля удаленную учебную систему (LMS) - MATE Education. Платформа позволяла создавать теорию, тесты и лабораторные работы, а также ввести подробную статистику по каждому студенту, по каждой пройденной им курса/урока/теории/теста/лабораторной вплоть до глав и вопросов. Платформа позволяла студентам получать качественное и актуальное образование, а администраторам контролировать и улучшать учебные курсы.',
     link: 'https://mate-edu.io',
@@ -146,7 +178,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '3',
+    id: '4',
     name: 'IT ACADEMY',
     shortDescription: 'Учебный центр IT ACADEMY',
     logo: '/projects/itAcademy/itacademy.svg',
@@ -169,11 +201,11 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '4',
+    id: '5',
     name: 'Kadabra',
     shortDescription: 'Интернет магазин Kadabra',
     logo: '/projects/kadabra/kadabra.svg',
-    description: 'Это интернет магазин, где пользователи могли покупать товары или создовать свои магазины и продавать свои товары.',
+    description: 'Это интернет магазин, где пользователи могли покупать товары или создавать свои магазины и продавать свои товары.',
     link: '',
     stack: 'ReactJS, Ant Design, Axios, i18next',
     photos: [
@@ -189,7 +221,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '5',
+    id: '6',
     name: 'Edocs',
     shortDescription: 'Электронный документооборот Edocs',
     logo: '/projects/edocs/edocs.svg',
@@ -205,11 +237,11 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '6',
+    id: '7',
     name: 'Tech Yard Solutions',
     shortDescription: 'Аутсорсинговая компания Tech Yard Solutions',
     logo: '/projects/techyard/techyard.svg',
-    description: 'Сайт аутсорсинговой компании на котором можно было ознакомиться с их услугами. Написан на HTML для улучшения SEO',
+    description: 'Сайт аутсорсинговой компании на котором можно было ознакомиться с их услугами. Написан на HTML для улучшения SEO.',
     link: 'https://techyardsolutions.com',
     stack: 'HTML, CSS',
     photos: [
@@ -220,11 +252,11 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '7',
+    id: '8',
     name: 'TruckStaff Solutions',
     shortDescription: 'Логистическая компания TruckStaff Solutions',
     logo: '/projects/truckstaff/truckstaff.svg',
-    description: 'Лендинг для американской логистической компании',
+    description: 'Лендинг для американской логистической компании.',
     link: 'https://truckstaff.us',
     stack: 'ReactJS, Ant Design, i18next',
     photos: [
@@ -233,7 +265,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '8',
+    id: '9',
     name: 'Dolina Capital',
     shortDescription: 'Портфолио компании инвесторов Dolina Capital',
     logo: '/projects/dolinacapital/dolinacapital.svg',
@@ -248,7 +280,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '9',
+    id: '10',
     name: 'Valstatex',
     shortDescription: 'Консалтинговая компания Valstatex',
     logo: '/projects/valstatex/valstatex.svg',
@@ -262,7 +294,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '10',
+    id: '11',
     name: 'Lagom.software',
     shortDescription: 'Аутсорсинговая компания Lagom.software',
     logo: '/projects/lagom/lagom.svg',
@@ -277,7 +309,7 @@ export const ProjectsData: ProjectType[] = [
     ],
   },
   {
-    id: '11',
+    id: '12',
     name: 'Chd',
     shortDescription: 'Мониторинг учебных центров Chd',
     logo: '/projects/chd/chd.svg',
