@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import Image from 'next/image';
 import Header from '@/app/components/Header/Header';
 import Preloader from '@/app/components/Preloader/Preloader';
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 const ProjectDetail = ({ params }: { params: { id: string } }) => {
   const check = (el: ProjectType) => el.id === params.id;
 
-  const project = ProjectsData.find(check);
+  const project = useMemo(() => ProjectsData.find(check), []);
   if (!project) return <Preloader />;
 
   const {
@@ -65,7 +66,7 @@ const ProjectDetail = ({ params }: { params: { id: string } }) => {
                   key={id}
                   className="after:content group relative mb-5 block w-full cursor-zoom-in after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:shadow-highlight"
                 >
-                  <Modal link={modalLink} shortDescription={shortDescription} />
+                  <Modal id={id} link={modalLink} shortDescription={shortDescription} />
                 </div>
               ))}
             </div>

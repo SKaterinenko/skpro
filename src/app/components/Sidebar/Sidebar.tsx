@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FaGithub, FaRegEnvelope, FaTelegramPlane } from 'react-icons/fa';
 
-const Sidebar = () => (
+const Sidebar = memo(() => (
   <div className="sticky top-1/2 bottom-1/2">
     <div className="text-4xl cursor-pointer">
       <a href="https://t.me/SKaterinenko" target="_blank" rel="noreferrer"><FaTelegramPlane className="mb-8" /></a>
@@ -9,6 +9,6 @@ const Sidebar = () => (
       <a href="https://github.com/SKaterinenko" target="_blank" rel="noreferrer"><FaGithub className="mb-8" /></a>
     </div>
   </div>
-);
+));
 
 export default Sidebar;

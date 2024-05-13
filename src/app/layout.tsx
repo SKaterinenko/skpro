@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
-  <html lang="ru">
+  <html lang="ru" className="no-scrollbar">
     <body>
       {children}
     </body>

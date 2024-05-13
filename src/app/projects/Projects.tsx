@@ -1,11 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { memo, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMediaQuery } from 'react-responsive';
 import Pagination from '@/app/components/Pagination/Pagination';
 import { ProjectsData } from '@/app/projects/ProjectData';
 
-const Projects = () => {
+const Projects = memo(() => {
   const [currentPage, setCurrentPage] = useState(1);
   const isPhone = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ query: '(max-width: 1280px)' });
@@ -57,6 +57,6 @@ const Projects = () => {
       />
     </div>
   );
-};
+});
 
 export default Projects;

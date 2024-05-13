@@ -1,14 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 import Image, { StaticImageData } from 'next/image';
 
 type PropsType = {
   link: StaticImageData
   shortDescription: string
+  id: number
 };
-const Modal = ({ link, shortDescription }: PropsType) => {
+
+const Modal = memo(({ id, link, shortDescription }: PropsType) => {
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -32,19 +34,18 @@ const Modal = ({ link, shortDescription }: PropsType) => {
         toggler={toggle}
         sources={[
           <Image
-            key={Math.random()}
+            key={id}
             alt={shortDescription}
             placeholder="blur"
             className="object-contain w-full h-full"
             style={{ transform: 'translate3d(0, 0, 0)' }}
             src={link}
             onClick={() => setToggle(!toggle)}
-            fill
           />,
         ]}
       />
     </>
   );
-};
+});
 
 export default Modal;
