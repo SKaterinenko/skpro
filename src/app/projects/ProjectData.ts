@@ -97,6 +97,19 @@ import techyard3 from '../../../public/projects/techyard/techyard3.png';
 import techyard4 from '../../../public/projects/techyard/techyard4.png';
 import truckstaff1 from '../../../public/projects/truckstaff/truckstaff1.png';
 import truckstaff2 from '../../../public/projects/truckstaff/truckstaff2.png';
+import undp1 from '../../../public/projects/undp/undp1.png';
+import undp10 from '../../../public/projects/undp/undp10.png';
+import undp11 from '../../../public/projects/undp/undp11.png';
+import undp12 from '../../../public/projects/undp/undp12.png';
+import undp13 from '../../../public/projects/undp/undp13.png';
+import undp2 from '../../../public/projects/undp/undp2.png';
+import undp3 from '../../../public/projects/undp/undp3.png';
+import undp4 from '../../../public/projects/undp/undp4.png';
+import undp5 from '../../../public/projects/undp/undp5.png';
+import undp6 from '../../../public/projects/undp/undp6.png';
+import undp7 from '../../../public/projects/undp/undp7.png';
+import undp8 from '../../../public/projects/undp/undp8.png';
+import undp9 from '../../../public/projects/undp/undp9.png';
 import valstatex1 from '../../../public/projects/valstatex/valstatex1.png';
 import valstatex2 from '../../../public/projects/valstatex/valstatex2.png';
 import valstatex3 from '../../../public/projects/valstatex/valstatex3.png';
@@ -125,7 +138,7 @@ export const ProjectsData: ProjectType[] = [
     logo: '/projects/rnd/rnd.svg',
     description: 'RnD платформа для создания проектов, для проектов можно создавать научно исследовательские работы, принимать заявки, открывать вакансии и стажировки, маркетплейс ресурсов (услуги, оборудование, датасеты), создание технических заделов и многое другое. Над разработкой всего этого я принимал участие + внедрение методологии FSD',
     link: '',
-    stack: ' React, Redux-toolkit, RTK Query, TypeScript, Feature sliced design, MUI',
+    stack: 'React, Redux-toolkit, RTK Query, TypeScript, Feature sliced design, MUI',
     photos: [
       { id: 1, link: rnd1 },
       { id: 2, link: rnd2 },
@@ -145,24 +158,26 @@ export const ProjectsData: ProjectType[] = [
   },
   {
     id: '2',
-    name: 'Сенат РУз',
-    shortDescription: 'Конструктор соц.сетей SkyLab',
-    logo: '/projects/skylab/skylab.svg',
-    description: 'Проект позволял создавать свои сообщества, свои социальные сети с гибкой настройкой. Клиенту достаточно было настроить соц.сеть в админской панели не прибегая к изменению кода.',
-    link: 'https://skylab.world',
-    stack: 'NextJS, ReactJS, TypeScript, Socket.io, Zustand',
+    name: 'Сенат Узбекистана и ООН',
+    shortDescription: 'Платформа мониторинга имплементации стратегий',
+    logo: '/projects/undp/undp.svg',
+    description: 'Проектная работа для сената РУз и ООН. Платформа мониторинга имплементации стратегии достижения гендерного равенства в РУз. Был единственным frontend разработчиком. Разработка с нуля до MVP за 2 месяца.',
+    link: '',
+    stack: 'Next, Redux-toolkit, TypeScript, Feature sliced design, RTK Query, i18next, Ant Design',
     photos: [
-      { id: 1, link: skylab1 },
-      { id: 2, link: skylab2 },
-      { id: 3, link: skylab3 },
-      { id: 4, link: skylab4 },
-      { id: 5, link: skylab5 },
-      { id: 6, link: skylab6 },
-      { id: 7, link: skylab7 },
-      { id: 8, link: skylab8 },
-      { id: 9, link: skylab9 },
-      { id: 10, link: skylab10 },
-      { id: 11, link: skylab11 },
+      { id: 1, link: undp1 },
+      { id: 2, link: undp2 },
+      { id: 3, link: undp3 },
+      { id: 4, link: undp4 },
+      { id: 5, link: undp5 },
+      { id: 6, link: undp6 },
+      { id: 7, link: undp7 },
+      { id: 8, link: undp8 },
+      { id: 9, link: undp9 },
+      { id: 10, link: undp10 },
+      { id: 11, link: undp11 },
+      { id: 12, link: undp12 },
+      { id: 13, link: undp13 },
     ],
   },
   {
