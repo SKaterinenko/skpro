@@ -12,7 +12,7 @@ const Header = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
-  // Позволяет кнопки менять тему
+  // Позволяет кнопке менять тему сайта
   useEffect(() => {
     const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -72,7 +72,7 @@ const Header = () => {
       <div>
         <ul className="flex">
           <li data-menuanchor="page1" className="md:block hidden px-4 text-2xl cursor-pointer font-bold self-center">
-            <a href="#skills">
+            <a href="/#skills">
               Скиллы
             </a>
           </li>
@@ -80,21 +80,16 @@ const Header = () => {
             data-menuanchor="page2"
             className="md:block hidden px-4 text-2xl cursor-pointer font-bold self-center"
           >
-            <a href="#projects">Портфолио</a>
+            <a href="/#projects">Портфолио</a>
           </li>
-          <li
-            className="px-4 text-2xl cursor-pointer font-bold self-center"
+          <button
+            type="button"
+            className="px-4 text-2xl cursor-pointer font-bold self-center outline-none"
+            onClick={handleThemeSwitch}
           >
-            <button
-              type="button"
-              onClick={() => {
-                handleThemeSwitch();
-              }}
-            >
-              <FaRegMoon className="block dark:hidden" />
-              <ImSun className="hidden dark:block" />
-            </button>
-          </li>
+            <FaRegMoon className="block dark:hidden" />
+            <ImSun className="hidden dark:block" />
+          </button>
         </ul>
       </div>
     </header>
