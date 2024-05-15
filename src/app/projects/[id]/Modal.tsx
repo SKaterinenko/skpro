@@ -3,6 +3,7 @@
 import { memo, useState } from 'react';
 import FsLightbox from 'fslightbox-react';
 import Image, { StaticImageData } from 'next/image';
+import { createPortal } from 'react-dom';
 
 type PropsType = {
   link: StaticImageData
@@ -30,7 +31,7 @@ const Modal = memo(({ id, link, shortDescription }: PropsType) => {
                   25vw"
       />
 
-      <FsLightbox
+      {createPortal(<FsLightbox
         toggler={toggle}
         sources={[
           <Image
@@ -43,7 +44,7 @@ const Modal = memo(({ id, link, shortDescription }: PropsType) => {
             onClick={() => setToggle(!toggle)}
           />,
         ]}
-      />
+      />, document.body)}
     </>
   );
 });

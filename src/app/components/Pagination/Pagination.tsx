@@ -1,10 +1,19 @@
 /*eslint-disable*/
-import React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { DOTS, usePagination } from './usePagination';
 import './pagination.scss';
 
-const Pagination = (props) => {
+interface PaginationProps {
+  onPageChange: (page: number) => void
+  totalCount: number
+  siblingCount?: number
+  currentPage: number
+  pageSize: number
+  className: string
+}
+
+const Pagination:FC<PaginationProps> = memo((props) => {
   const {
     onPageChange,
     totalCount,
@@ -21,7 +30,7 @@ const Pagination = (props) => {
     pageSize,
   });
 
-  if (currentPage === 0 || paginationRange.length < 2) {
+  if (currentPage === 0 || paginationRange!.length < 2) {
     return null;
   }
 
@@ -33,7 +42,7 @@ const Pagination = (props) => {
     onPageChange(currentPage - 1);
   };
 
-  const lastPage = paginationRange[paginationRange.length - 1];
+  const lastPage = paginationRange![paginationRange!.length - 1];
 
   return (
     <ul
@@ -47,7 +56,7 @@ const Pagination = (props) => {
       >
         <div className="arrow left" />
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange!.map((pageNumber) => {
         if (pageNumber === DOTS) {
           return <li key={Math.random()} className="pagination-item dots">&#8230;</li>;
         }
@@ -58,7 +67,7 @@ const Pagination = (props) => {
             className={classnames('pagination-item', {
               selected: pageNumber === currentPage,
             })}
-            onClick={() => onPageChange(pageNumber)}
+            onClick={() => onPageChange(+pageNumber)}
           >
             {pageNumber}
           </li>
@@ -74,6 +83,6 @@ const Pagination = (props) => {
       </li>
     </ul>
   );
-};
+});
 
 export default Pagination;

@@ -6,7 +6,7 @@ import Pagination from '@/app/components/Pagination/Pagination';
 import { ProjectsData } from '@/app/projects/ProjectData';
 
 const Projects = memo(() => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const isPhone = useMediaQuery({ query: '(max-width: 768px)' });
   const isTablet = useMediaQuery({ query: '(max-width: 1280px)' });
   let PageSize = 2;
@@ -20,7 +20,7 @@ const Projects = memo(() => {
   }
 
   const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
+    const firstPageIndex = (+currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
     return ProjectsData.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
