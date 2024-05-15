@@ -1,21 +1,21 @@
 import { memo } from 'react';
 import Image from 'next/image';
-import { FaGithub } from 'react-icons/fa';
 import antd from '../../../../public/antd.png';
-import bitbucket from '../../../../public/bitbucket.png';
-import bootstrap from '../../../../public/bootstrap.png';
 import figma from '../../../../public/figma.png';
+import fsd from '../../../../public/fsd.png';
 import gitlab from '../../../../public/gitlab.png';
 import i18next from '../../../../public/i18next.png';
-import jira from '../../../../public/jira.png';
+import jest from '../../../../public/jest.png';
 import nextjs from '../../../../public/nextjs.png';
 import react from '../../../../public/react.png';
 import redux from '../../../../public/redux.png';
 import rhf from '../../../../public/rhf.png';
+import rtl from '../../../../public/rtl.png';
 import sass from '../../../../public/sass.png';
-import swiper from '../../../../public/swiper.png';
+import storybook from '../../../../public/storybook.png';
 import tailwind from '../../../../public/tailwind.png';
 import typescript from '../../../../public/typescript.png';
+import webpack from '../../../../public/webpack.png';
 
 const photos = [
   {
@@ -24,19 +24,19 @@ const photos = [
     link: 'https://www.typescriptlang.org/',
   },
   {
-    alt: 'Ant Design',
-    src: antd,
-    link: 'https://ant.design/',
+    alt: 'Jest',
+    src: jest,
+    link: 'https://jestjs.io/',
   },
   {
-    alt: 'Bitbucket',
-    src: bitbucket,
-    link: 'https://bitbucket.org/',
+    alt: 'React testing library',
+    src: rtl,
+    link: 'https://testing-library.com/docs/react-testing-library/intro/',
   },
   {
-    alt: 'React Bootstrap',
-    src: bootstrap,
-    link: 'https://react-bootstrap.github.io/',
+    alt: 'Storybook',
+    src: storybook,
+    link: 'https://storybook.js.org/',
   },
   {
     alt: 'i18next',
@@ -64,9 +64,9 @@ const photos = [
     link: 'https://sass-lang.com/',
   },
   {
-    alt: 'Swiper',
-    src: swiper,
-    link: 'https://swiperjs.com/',
+    alt: 'FSD',
+    src: fsd,
+    link: 'https://feature-sliced.design/ru/',
   },
   {
     alt: 'Tailwind',
@@ -79,14 +79,19 @@ const photos = [
     link: 'https://about.gitlab.com/',
   },
   {
-    alt: 'Jira',
-    src: jira,
-    link: 'https://www.atlassian.com/ru/software/jira',
+    alt: 'Ant Design',
+    src: antd,
+    link: 'https://ant.design/',
   },
   {
     alt: 'Figma',
     src: figma,
     link: 'https://www.figma.com/',
+  },
+  {
+    alt: 'Webpack',
+    src: webpack,
+    link: 'https://webpack.js.org/',
   },
 ];
 
@@ -112,20 +117,15 @@ const Skills = memo(() => (
             href={link}
           >
             <Image
-              className="lg:w-70 lg:h-70 md:w-20 md:h-20 w-10 h-10 "
+              className="lg:w-[80px] lg:h-[80px] md:w-[70px] md:h-[70px] w-[40px] h-[40px] "
               src={src}
-              width={70}
-              height={70}
+              width={80}
+              height={80}
               placeholder="blur"
               alt={alt}
             />
           </a>
         ))}
-        <a className="flex justify-center md:justify-start" href="https://github.com/SKaterinenko">
-          <FaGithub
-            className="md:text-7xl text-4xl"
-          />
-        </a>
       </div>
     </div>
     <div className="hidden xl:flex justify-center">
