@@ -22,7 +22,8 @@ const Projects = memo(() => {
   const currentTableData = useMemo(() => {
     const firstPageIndex = (+currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return ProjectsData.slice(firstPageIndex, lastPageIndex);
+    const reverseProjectsData = [...ProjectsData].reverse();
+    return reverseProjectsData.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
   return (
