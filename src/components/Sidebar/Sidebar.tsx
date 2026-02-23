@@ -1,0 +1,20 @@
+import React, { memo } from "react";
+import { FaGithub, FaTelegramPlane } from "react-icons/fa";
+
+export const Sidebar = memo(() => (
+	<div className="sticky top-1/2 bottom-1/2">
+		<div className="text-4xl cursor-pointer">
+			<a href="https://t.me/SKaterinenko" target="_blank" rel="noreferrer">
+				<FaTelegramPlane className="mb-8" />
+			</a>
+			{/*<a href="mailto: skaterinenko@gmail.com" target="_blank" rel="noreferrer"><FaRegEnvelope className="mb-8" /></a>*/}
+			<a
+				href="https://github.com/SKaterinenko"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<FaGithub className="mb-8" />
+			</a>
+		</div>
+	</div>
+));

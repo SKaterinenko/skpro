@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+	color: rgb(0, 0, 0);
+	background:
+		linear-gradient(to bottom, transparent, rgb(255, 255, 255)),
+		rgb(214, 219, 220);
+}
+
+.dark body {
+	color: rgb(255, 255, 255);
+	background:
+		linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0);
+}
+
+.bg-gradient-white {
+	background:
+		linear-gradient(to bottom, transparent, rgb(255, 255, 255)),
+		rgb(214, 219, 220);
+}
+
+.bg-gradient-black {
+	background:
+		linear-gradient(to bottom, transparent, rgb(40, 40, 40)), rgb(0, 0, 0);
+}
+
+.bg-grey {
+	background: rgb(214, 219, 220);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.fp-overflow {
+	overflow: hidden !important;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.fp-overflow::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+.fp-watermark {
+	display: none;
+}
+
+.fullpage-wrapper {
+	width: 100%;
+}
+
+.fslightbox-open {
+	height: auto !important;
+}
+
+#fp-nav ul li a span {
+	background-color: black;
+}
+
+.dark #fp-nav ul li a span {
+	background-color: white;
+}
+
+.container {
+	position: relative;
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	scroll-snap-type: y mandatory;
+	min-height: 100vh;
+	height: 100vh;
+	scroll-behavior: smooth;
+	width: 100%;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
